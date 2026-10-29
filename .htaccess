@@ -1,0 +1,7 @@
+RewriteEngine On
+# Dosya veya klasör gerçekten varsa kuralı işletme
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# .php uzantısını gizle (SEO Dostu URL Kriteri)
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
